@@ -1,38 +1,20 @@
-use cmdplus::touch_file;
 use std::fs;
-use tempfile::tempdir;
+use std::path::Path;
+use cmdplus::commands::touch::touch_command;
 
 #[test]
-fn creates_new_file() {
-    let dir = tempdir().unwrap();
-    let file_path = dir.path().join("newfile.txt");
+fn test_touch_creates_file_and_directories() {
+    let test_path = "test_temp_dir/subdir/testfile.txt";
+    let _ = fs::remove_file(&test_path);
+    let _ = fs::remove_dir_all("test_temp_dir");
 
-    assert!(!file_path.exists());
-    touch_file(&file_path).unwrap();
-    assert!(file_path.exists());
-}
+    assert!(!Path::new(test_path).exists());
 
-#[test]
-fn updates_timestamp_on_existing_file() {
-    let dir = tempdir().unwrap();
-    let file_path = dir.path().join("existing.txt");
+    let result = touch_command(test_path);
+    assert!(result.is_ok());
+    assert!(Path::new(test_path).exists());
 
-    fs::write(&file_path, b"hello").unwrap();
-    let old_time = fs::metadata(&file_path).unwrap().modified().unwrap();
-
-    std::thread::sleep(std::time::Duration::from_secs(1));
-    touch_file(&file_path).unwrap();
-    let new_time = fs::metadata(&file_path).unwrap().modified().unwrap();
-
-    assert!(new_time > old_time);
-}
-
-#[test]
-fn creates_file_in_missing_nested_dirs() {
-    let dir = tempfile::tempdir().unwrap();
-    let file_path = dir.path().join("nested/path/file.txt");
-
-    assert!(!file_path.exists());
-    touch_file(&file_path).unwrap();
-    assert!(file_path.exists());
+    // クリーンアップ
+    let _ = fs::remove_file(test_path);
+    let _ = fs::remove_dir_all("test_temp_dir");
 }

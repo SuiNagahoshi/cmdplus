@@ -10,3 +10,7 @@ filetime = "0.2.25"
 [dev-dependencies]
 assert_cmd = "2.0"
 tempfile = "3.19.1"
+
+[lib]
+name = "cmdplus"
+path = "src/lib.rs"
