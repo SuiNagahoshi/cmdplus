@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # 例: v0.1.0 のようなタグのときに実行
+
+jobs:
+  release:
+    name: Build and Upload Release
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build for Windows
+        run: cargo build --release
+
+      - name: Run tests
+        run: cargo test --release
+
+      - name: Strip binary (optional, reduce size)
+        run: |
+          mkdir dist
+          copy target\release\cmdplus.exe dist\cmdplus.exe
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/cmdplus.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
