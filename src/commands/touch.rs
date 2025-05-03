@@ -17,7 +17,7 @@ pub fn touch_command(path_str: &str) -> io::Result<()> {
         filetime::set_file_mtime(path, now)?;
     } else {
         // なければ作成
-        OpenOptions::new().create(true).write(true).open(path)?;
+        OpenOptions::new().create(true).append(true).open(path)?;
     }
 
     Ok(())
