@@ -24,6 +24,13 @@ enum Commands {
         /// Name of the command
         program: String,
     },
+
+    /// List files and directories by size
+    Lsz {
+        /// Path to list
+        #[arg(default_value = ".")]
+        path: String,
+    },
 }
 
 pub fn run() {
@@ -43,5 +50,8 @@ pub fn run() {
                 std::process::exit(1);
             }
         },
+        Commands::Lsz { path } => {
+            commands::lsz::execute_lsz(&path);
+        }
     }
 }
