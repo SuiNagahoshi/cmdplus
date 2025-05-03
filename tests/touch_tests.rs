@@ -1,6 +1,6 @@
+use cmdplus::commands::touch::touch_command;
 use std::fs;
 use std::path::Path;
-use cmdplus::commands::touch::touch_command;
 
 #[test]
 fn test_touch_creates_file_and_directories() {

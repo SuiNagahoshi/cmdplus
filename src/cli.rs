@@ -36,14 +36,12 @@ pub fn run() {
                 std::process::exit(1);
             }
         }
-        Commands::Which { program } => {
-            match commands::which::which_command(&program) {
-                Some(path) => println!("{}", path.display()),
-                None => {
-                    eprintln!("{} not found in PATH", program);
-                    std::process::exit(1);
-                }
+        Commands::Which { program } => match commands::which::which_command(&program) {
+            Some(path) => println!("{}", path.display()),
+            None => {
+                eprintln!("{} not found in PATH", program);
+                std::process::exit(1);
             }
-        }
+        },
     }
 }

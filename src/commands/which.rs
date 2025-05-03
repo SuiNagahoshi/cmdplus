@@ -1,6 +1,6 @@
 use std::env;
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
 pub fn which_command(program: &str) -> Option<PathBuf> {
     let path_env = env::var_os("PATH")?;
@@ -23,7 +23,11 @@ pub fn which_command(program: &str) -> Option<PathBuf> {
             if !ext.is_empty() {
                 full_path.set_extension(&ext[1..]); // remove leading `.`
             }
-            if full_path.exists() && fs::metadata(&full_path).map(|m| m.is_file()).unwrap_or(false) {
+            if full_path.exists()
+                && fs::metadata(&full_path)
+                    .map(|m| m.is_file())
+                    .unwrap_or(false)
+            {
                 return Some(full_path);
             }
         }
