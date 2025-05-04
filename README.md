@@ -1,6 +1,6 @@
 # cmdplus
 
-[![Docs](https://img.shields.io/badge/docs-online-blue?logo=rust)](https://suinagahoshi.github.io/cmdplus/)
+[![Docs](https://img.shields.io/badge/docs-online-blue?logo=rust)](https://suinagahoshi.github.io/cmdplus/cmdplus)
 ![build](https://github.com/SuiNagahoshi/cmdplus/actions/workflows/ci.yml/badge.svg)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![Rust](https://img.shields.io/badge/rust-stable-blue)
