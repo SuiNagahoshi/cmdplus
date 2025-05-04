@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["lsz","touch","which"]};
+window.SIDEBAR_ITEMS = {"mod":["lsz","rm","touch","which"]};
