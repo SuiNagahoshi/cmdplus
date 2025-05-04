@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 clap = { version = "4.5.37", features = ["derive"] }
 filetime = "0.2.25"
+lazy_static = "1.5.0"
 
 [dev-dependencies]
 tempfile = "3.19.1"
