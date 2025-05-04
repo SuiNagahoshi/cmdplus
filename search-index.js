@@ -1,4 +1,0 @@
-var searchIndex = new Map(JSON.parse('[["cmdplus",{"t":"CCCCCHHHH","n":["commands","lsz","rm","touch","which","lsz_command","rm_command","touch_command","which_command"],"q":[[0,"cmdplus"],[1,"cmdplus::commands"],[5,"cmdplus::commands::lsz"],[6,"cmdplus::commands::rm"],[7,"cmdplus::commands::touch"],[8,"cmdplus::commands::which"],[9,"alloc::string"],[10,"std::io::error"],[11,"core::result"],[12,"std::path"],[13,"core::option"]],"i":"`````````","f":"`````{{{d{b}}}{{j{fh}}}}{{{d{b}}ll}{{A`{n}}}}{{{d{b}}}{{A`{n}}}}{{{d{b}}}{{Ad{Ab}}}}","D":"n","p":[[1,"str"],[1,"reference",null,null,1],[5,"String",9],[5,"Error",10],[6,"Result",11,null,1],[1,"bool"],[1,"unit"],[8,"Result",10],[5,"PathBuf",12],[6,"Option",13,null,1]],"r":[],"b":[],"c":"OjAAAAAAAAA=","e":"OjAAAAEAAAAAAAIAEAAAAAAAAQADAA==","P":[]}]]'));
-if (typeof exports !== 'undefined') exports.searchIndex = searchIndex;
-else if (window.initSearch) window.initSearch(searchIndex);
-//{"start":39,"fragment_lengths":[763]}
