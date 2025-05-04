@@ -56,6 +56,12 @@ enum Commands {
         /// Target directory (optional) - 対象ディレクトリ（省略可能）
         dir: Option<String>,
     },
+    /// Remove a file
+    /// - ファイルを削除します
+    Rm {
+        /// Path of the file to remove - 対象ファイルのパス
+        file: String,
+    },
 }
 
 /// Entry point for CLI logic.
@@ -86,6 +92,12 @@ pub fn run() {
             let dir_path = dir.unwrap_or_else(|| ".".to_string());
             if let Err(e) = commands::lsz::lsz_command(&dir_path) {
                 eprintln!("lsz failed: {e}");
+                std::process::exit(1);
+            }
+        }
+        Commands::Rm { file } => {
+            if let Err(e) = commands::rm::rm_command(&file) {
+                eprintln!("rm failed: {e}");
                 std::process::exit(1);
             }
         }
