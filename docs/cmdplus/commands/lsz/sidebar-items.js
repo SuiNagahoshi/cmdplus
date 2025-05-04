@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["lsz_command"]};
