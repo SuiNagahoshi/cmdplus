@@ -1,0 +1,1 @@
+searchState.loadedDescShard("cmdplus", 0, "<code>lsz</code> command implementation\n<code>touch</code> command implementation\n<code>which</code> command implementation\nEnglish\nRemove a file or directory.\nCreate a file and any missing parent directories.\nFind the full path of the given command.")
