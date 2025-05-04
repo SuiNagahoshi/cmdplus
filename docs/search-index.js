@@ -1,0 +1,4 @@
+var searchIndex = new Map(JSON.parse('[["cmdplus",{"t":"CCCCHHH","n":["commands","lsz","touch","which","lsz_command","touch_command","which_command"],"q":[[0,"cmdplus"],[1,"cmdplus::commands"],[4,"cmdplus::commands::lsz"],[5,"cmdplus::commands::touch"],[6,"cmdplus::commands::which"],[7,"std::io::error"],[8,"std::path"],[9,"core::option"]],"i":"```````","f":"````{{{d{b}}}{{h{f}}}}0{{{d{b}}}{{l{j}}}}","D":"l","p":[[1,"str"],[1,"reference",null,null,1],[1,"unit"],[8,"Result",7],[5,"PathBuf",8],[6,"Option",9,null,1]],"r":[],"b":[],"c":"OjAAAAAAAAA=","e":"OjAAAAEAAAAAAAEAEAAAAAAAAQA=","P":[]}]]'));
+if (typeof exports !== 'undefined') exports.searchIndex = searchIndex;
+else if (window.initSearch) window.initSearch(searchIndex);
+//{"start":39,"fragment_lengths":[556]}
